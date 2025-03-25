@@ -1,0 +1,41 @@
+{
+  "name": "qr-code-risk-scanner",
+  "version": "1.0.0",
+  "description": "Desktop application to scan QR codes and assess potential security risks",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.13"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "crypto-js": "^4.1.1",
+    "node-fetch": "^2.6.7",
+    "sanitize-html": "^2.7.0",
+    "uuid": "^8.3.2"
+  },
+  "build": {
+    "appId": "com.qrcodescanner.app",
+    "productName": "QR Code Risk Scanner",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    }
+  }
+}
